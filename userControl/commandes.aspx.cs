@@ -23,9 +23,19 @@ namespace userControl
                 e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 var Cmd = e.Item.DataItem as Commande;
-
+                
+                double total = 0;
+                foreach (Composition c in db.Composition)
+                {
+                    if (c.Commande == Cmd)
+                    {
+                        total += (double)c.Article.Pu * c.Qte;
+                    }
+                }
+                
                 var control = e.Item.FindControl("cmdcntrl") as cmdControl;
                 control.cmd = Cmd;
+                control.price = total;
             }
         }
     }

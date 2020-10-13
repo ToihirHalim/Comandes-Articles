@@ -13,9 +13,9 @@
         <tr>
             <td class="auto-style3"><strong><asp:Label ID="lblCodeArt" runat="server" Text="Label"></asp:Label></strong></td>
             <td class="auto-style3"><strong><asp:Label ID="lblLibele" runat="server" Text="Label"></asp:Label></strong></td>
-            <td class="auto-style3"><strong><asp:Label ID="lblPu" runat="server" Text="Label"></asp:Label></strong></td>
+            <td class="auto-style3"><strong>$<asp:Label ID="lblPu" runat="server" Text="Label"></asp:Label></strong></td>
             <td class="auto-style3"><strong><asp:Label ID="lblQte" runat="server" Text="Label"></asp:Label></strong></td>
-            <td class="auto-style3"><strong><asp:Label ID="lblPt" runat="server" Text="Label"></asp:Label></strong></td>
+            <td class="auto-style3"><strong>$<asp:Label ID="lblPt" runat="server" Text="Label"></asp:Label></strong></td>
         </tr>
     </table>
 </div>

@@ -13,6 +13,7 @@ namespace userControl
         public Commande cmd;
         protected string codecmd = "", date = "",total = "";
         protected Composition[] composition;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(Session["Value"] != null)

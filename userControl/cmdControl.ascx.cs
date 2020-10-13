@@ -11,12 +11,15 @@ namespace userControl
     public partial class cmdControl : System.Web.UI.UserControl
     {
         public Commande cmd { get; set; }
+        public double price { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (cmd == null) return;
             lbCodeCmd.Text = cmd.CodeCmd.ToString();
             DateTime dt = getDate(cmd);
             lbDateCmd.Text = dt.ToString();
+            prix.Text = price.ToString();
         }
         
         protected DateTime getDate(Commande cmd)

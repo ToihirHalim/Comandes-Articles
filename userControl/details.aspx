@@ -25,8 +25,11 @@
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="commandes.aspx" ><h2>Commandes</h2></asp:HyperLink>
         </div>
         <div style="width:560px; margin:0 auto; background-color:#dbe9ea; padding: 10px;" >
-            &nbsp;<strong>Commande</h2> n: <%= codecmd %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Le <strong><%= date %><strong>
-            <br /><br /><br />
+            <div style="display: flex; justify-content: space-between;">
+                <h2>Commande n: <%= codecmd %></h2>
+                <h4>le <%= date %></h4> 
+            </div>
+            <br />
             <div class="Cmp">
                 <table class="auto-style1">
                     <tr>
@@ -49,11 +52,11 @@
                 <hr />
                 <table class="auto-style1">
                     <tr>
-                        <td class="auto-style3"><strong><h3>Total</h3></strong></td>
+                        <td class="auto-style3"><h3 style="margin: 10px 0px; padding: 0px;">Total</h3></td>
                         <td class="auto-style3"></td>
                         <td class="auto-style3"></td>
                         <td class="auto-style3"></td>
-                        <td class="auto-style3"><h3><%= total %><h3></td>
+                        <td class="auto-style3"><h2 style="margin: 10px 0px; padding: 0px;">$<%= total %></h2></td>
                     </tr>
                 </table>
             </div>
