@@ -27,9 +27,7 @@
         }
         .auto-style5 {
             background-color:cadetblue;
-        }
-        .add{
-            padding-left: 25%px;
+            margin-left: 55px;
         }
         header{
             display: flex;
@@ -42,12 +40,6 @@
         #main {
              display: flex;
          }
-        .inputs{
-            flex: 1;
-        }
-        .outputs{
-            flex:1
-        }
     </style>
 </head>
 <body>
@@ -55,7 +47,7 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <asp:Timer ID="Timer1" runat="server"></asp:Timer>
+                <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick"></asp:Timer>
             </ContentTemplate>
         </asp:UpdatePanel>
         <header>
@@ -66,27 +58,33 @@
             <div class="inputs">
                 <table class="auto-style1">
                     <tr>
+                        <td class="auto-style2">Article ID</td>
+                        <td class="auto-style3">
+                            <asp:TextBox ID="articleId" runat="server" class="auto-style4"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="auto-style2">Article</td>
                         <td class="auto-style3">
-                            <input id="article" type="text" class="auto-style4"/>
+                            <asp:TextBox ID="article" runat="server" class="auto-style4"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">Price</td>
                         <td class="auto-style3">
-                            <input id="prix" type="text" class="auto-style4" />
+                            <asp:TextBox ID="prix" runat="server" class="auto-style4"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">Quantite</td>
                         <td class="auto-style3">
-                            <input id="quantite" type="number" min="1" value="1" class="auto-style4"/>
+                            <input id="quantite" runat="server" type="number" min="1" value="1" class="auto-style4"/>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">Submit</td>
-                        <td class="auto-style3 add">
-                            <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" />
+                        <td class="auto-style3">
+                            <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" OnClick="Button1_Click" />
                         </td>
                     </tr>
                 </table>
