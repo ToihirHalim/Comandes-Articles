@@ -24,7 +24,7 @@
             <h1 style="flex:2; color: #808080">Detail</h1> 
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="commandes.aspx" ><h2>Commandes</h2></asp:HyperLink>
         </div>
-        <div style="width:560px; margin:0 auto; background-color:#dbe9ea; padding: 10px;" >
+        <div style="width:560px; margin:0 auto; background-color:#dbe9ea; padding: 15px; " >
             <div style="display: flex; justify-content: space-between;">
                 <h2>Commande n: <%= codecmd %></h2>
                 <h4>le <%= date %></h4> 

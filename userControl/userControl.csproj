@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddComande.aspx" />
     <Content Include="App_Data\maBase.mdf" />
     <Content Include="App_Data\maBase_log.ldf">
       <DependentUpon>maBase.mdf</DependentUpon>
@@ -79,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddComande.aspx.cs">
+      <DependentUpon>AddComande.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddComande.aspx.designer.cs">
+      <DependentUpon>AddComande.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cmdControl.ascx.cs">
       <DependentUpon>cmdControl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

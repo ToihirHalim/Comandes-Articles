@@ -9,7 +9,7 @@
     <style>
         h1 {
             text-align: center;
-            margin-bottom: 90px;
+            margin-bottom: 50px;
         }
         #main {
             width: 80%;

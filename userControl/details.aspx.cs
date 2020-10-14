@@ -21,6 +21,9 @@ namespace userControl
                 string indx = Session["Value"].ToString();
                 int index = int.Parse(indx);
                 affiche(index);
+            }else
+            {
+                Response.Redirect("commandes.aspx");
             }
         }
         protected  void affiche(int index)
