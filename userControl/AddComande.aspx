@@ -22,17 +22,46 @@
              width: 620%;
              background-color: #99FFCC;
          }
-         .main {
-             display: flex;
-         }
         .auto-style4 {
             width: 183px;
+        }
+        .auto-style5 {
+            background-color:cadetblue;
+        }
+        .add{
+            padding-left: 25%px;
+        }
+        header{
+            display: flex;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            flex: 1;
+        }
+        #main {
+             display: flex;
+         }
+        .inputs{
+            flex: 1;
+        }
+        .outputs{
+            flex:1
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <h1>Add Command</h1>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <asp:Timer ID="Timer1" runat="server"></asp:Timer>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <header>
+            <h1 class="title">Add Command</h1>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="commandes.aspx" ><h2>Commandes</h2></asp:HyperLink>
+        </header>
         <div id="main">
             <div class="inputs">
                 <table class="auto-style1">
@@ -56,14 +85,18 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">Submit</td>
-                        <td class="auto-style3">
-                            <asp:Button ID="Button1" runat="server" Text="Add" />
+                        <td class="auto-style3 add">
+                            <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" />
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="outputs">
-
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        reciept
+                    </ContentTemplate>
+                </asp:UpdatePanel>
             </div>
         </div>
     </form>

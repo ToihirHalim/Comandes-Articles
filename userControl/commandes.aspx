@@ -18,12 +18,20 @@
             grid-gap: 10px 40px;
             grid-template-columns: repeat(auto-fill, 325px);
         }
+        header{
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <h1>les Commandes</h1>
+            <header>
+                <h1>les Commandes</h1>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="AddComande.aspx" ><h2>Add Command</h2></asp:HyperLink>
+            </header>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
