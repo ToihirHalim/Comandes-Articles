@@ -17,20 +17,28 @@ namespace userControl
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //TODO: here!
-            /*if(article.Text != "" && prix.Text != "" && Double.Parse(prix.Text))
+            if(article.Text != "" &&  int.TryParse(prix.Text, out int price))
             {
                 Article art = db.Article.SingleOrDefault(x => x.Libele == article.Text);
 
-                if(art != null)
+                if(art == null)
                 {
+                    art = new Article();
                     art.Libele = article.Text;
+                    art.Pu = price;
+                    db.Article.InsertOnSubmit(art);
+                    db.SubmitChanges();
+                    error.Text = "";
                 }
-                error.Text = "";
+                else
+                {
+                    error.Text = "article already exist";
+                }
+                
             }else
             {
                 error.Text = "Please enter informations !";
-            }*/
+            }
         }
     }
 }
