@@ -64,7 +64,8 @@
                         <tr>
                             <td class="auto-style2">Submit</td>
                             <td class="auto-style3">
-                                <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" style="margin-left: 55px" OnClick="Button1_Click" />
+                                <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" style="margin-left: 9px" OnClick="addArticle" />
+                                <asp:Button ID="Button2" runat="server" Text="Add" CssClass="auto-style5" Width="79px" style="margin-left: 55px" OnClick="updateArticle" />
                             </td>
                         </tr>
                     </table>

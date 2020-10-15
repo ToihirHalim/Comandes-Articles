@@ -15,7 +15,7 @@ namespace userControl
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void addArticle(object sender, EventArgs e)
         {
             if(article.Text != "" &&  int.TryParse(prix.Text, out int price))
             {
@@ -36,6 +36,31 @@ namespace userControl
                 }
                 
             }else
+            {
+                error.Text = "Please enter informations !";
+            }
+        }
+
+        protected void updateArticle(object sender, EventArgs e)
+        {
+            if (article.Text != "" && int.TryParse(prix.Text, out int price))
+            {
+                Article art = db.Article.SingleOrDefault(x => x.Libele == article.Text);
+
+                if (art != null)
+                {
+                    art.Libele = article.Text;
+                    art.Pu = price;
+                    db.SubmitChanges();
+                    error.Text = "";
+                }
+                else
+                {
+                    error.Text = "article does not already exist";
+                }
+
+            }
+            else
             {
                 error.Text = "Please enter informations !";
             }
