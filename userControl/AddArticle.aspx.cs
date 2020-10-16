@@ -65,5 +65,28 @@ namespace userControl
                 error.Text = "Please enter informations !";
             }
         }
+
+        protected void deleteArticle(object sender, EventArgs e)
+        {
+            if (article.Text != "")
+            {
+                Article art = db.Article.SingleOrDefault(x => x.Libele == article.Text);
+
+                if (art != null)
+                {
+                    db.Article.DeleteOnSubmit(art);
+                    db.SubmitChanges();
+                }
+                else
+                {
+                    error.Text = "article does not already exist";
+                }
+
+            }
+            else
+            {
+                error.Text = "Please enter informations !";
+            }
+        }
     }
 }
