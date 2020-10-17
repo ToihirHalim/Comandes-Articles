@@ -29,7 +29,8 @@
     <form id="form1" runat="server">
         <div>
             <header>
-                <h1>les Commandes</h1>
+                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="commandes.aspx" ><h2>les Commandes</h2></asp:HyperLink>
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="AddArticle.aspx" ><h2>Add Article</h2></asp:HyperLink>
                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="AddComande.aspx" ><h2>Add Command</h2></asp:HyperLink>
             </header>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

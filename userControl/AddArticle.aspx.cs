@@ -28,15 +28,18 @@ namespace userControl
                     art.Pu = price;
                     db.Article.InsertOnSubmit(art);
                     db.SubmitChanges();
-                    error.Text = "";
+                    error.Style["color"] = "green";
+                    error.Text = art.Libele + " added succesfly.";
                 }
                 else
                 {
+                    error.Style["color"] = "red";
                     error.Text = "article already exist";
                 }
                 
             }else
             {
+                error.Style["color"] = "red";
                 error.Text = "Please enter informations !";
             }
         }
@@ -52,41 +55,22 @@ namespace userControl
                     art.Libele = article.Text;
                     art.Pu = price;
                     db.SubmitChanges();
-                    error.Text = "";
+                    error.Style["color"] = "green";
+                    error.Text = art.Libele + " updated succesfly.";
                 }
                 else
                 {
+                    error.Style["color"] = "red";
                     error.Text = "article does not already exist";
                 }
 
             }
             else
             {
+                error.Style["color"] = "red";
                 error.Text = "Please enter informations !";
             }
         }
 
-        protected void deleteArticle(object sender, EventArgs e)
-        {
-            if (article.Text != "")
-            {
-                Article art = db.Article.SingleOrDefault(x => x.Libele == article.Text);
-
-                if (art != null)
-                {
-                    db.Article.DeleteOnSubmit(art);
-                    db.SubmitChanges();
-                }
-                else
-                {
-                    error.Text = "article does not already exist";
-                }
-
-            }
-            else
-            {
-                error.Text = "Please enter informations !";
-            }
-        }
     }
 }
