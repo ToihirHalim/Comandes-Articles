@@ -105,6 +105,24 @@ namespace userControl
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
+        /// Contrôle Cancel.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Cancel;
+
+        /// <summary>
+        /// Contrôle Submit.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Submit;
+
+        /// <summary>
         /// Contrôle UpdatePanel2.
         /// </summary>
         /// <remarks>

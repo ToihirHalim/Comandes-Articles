@@ -52,9 +52,31 @@ namespace userControl
             }
         }
 
-        protected void Timer1_Tick(object sender, EventArgs e)
+        protected void cancel(object sender, EventArgs e)
         {
+            cmps.Clear();
+        }
 
+        protected void submit(object sender, EventArgs e)
+        {
+            if(cmps.Count() > 0)
+            {
+                cmd = new Commande();
+                cmd.DateCmd = DateTime.Now;
+                db.Commande.InsertOnSubmit(cmd);
+
+                foreach (Composition cmp in cmps)
+                {
+                    cmp.Commande = cmd;
+                    db.Composition.InsertOnSubmit(cmp);
+                }
+
+                db.SubmitChanges();
+            }
+            else
+            {
+
+            }
         }
     }
 }

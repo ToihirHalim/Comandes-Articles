@@ -45,6 +45,12 @@
             justify-content: space-between;
             text-align: center;
         }
+        .inputs{
+            flex: 1;
+        }
+        .outputs{
+            flex: 1;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +94,10 @@
                          </td>
                     </tr>
                 </table>
+                <section id="buttons">
+                    <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="cancel" Height="63px" Width="129px" BackColor="Red" />
+                    <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="submit" Height="63px" Width="191px" BackColor="Lime"/>
+                </section>
             </div>
             <div class="outputs">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
