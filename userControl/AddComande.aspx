@@ -40,19 +40,21 @@
         #main {
              display: flex;
          }
+        header{
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-                <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick"></asp:Timer>
-            </ContentTemplate>
-        </asp:UpdatePanel>
+        
         <header>
-            <h1 class="title">Add Command</h1>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="commandes.aspx" ><h2>Commandes</h2></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="commandes.aspx" ><h2>Commandes</h2></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="commandes.aspx" ><h2>Add Command</h2></asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="commandes.aspx" ><h2>Add Article</h2></asp:HyperLink>
         </header>
         <div id="main">
             <div class="inputs">
@@ -60,19 +62,13 @@
                     <tr>
                         <td class="auto-style2">Article ID</td>
                         <td class="auto-style3">
-                            <asp:TextBox ID="articleId" runat="server" class="auto-style4"></asp:TextBox>
+                            <asp:TextBox ID="Id" runat="server" class="auto-style4"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style2">Article</td>
+                        <td class="auto-style2">Libele</td>
                         <td class="auto-style3">
-                            <asp:TextBox ID="article" runat="server" class="auto-style4"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style2">Price</td>
-                        <td class="auto-style3">
-                            <asp:TextBox ID="prix" runat="server" class="auto-style4"></asp:TextBox>
+                            <asp:TextBox ID="Libele" runat="server" class="auto-style4"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
@@ -82,10 +78,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="auto-style2">Submit</td>
+                        <td class="auto-style2">Add</td>
                         <td class="auto-style3">
-                            <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" OnClick="Button1_Click" />
-                        </td>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                     <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" OnClick="add" />
+                                 </ContentTemplate>
+                             </asp:UpdatePanel>
+                         </td>
                     </tr>
                 </table>
             </div>
@@ -93,6 +93,7 @@
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
                         reciept
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>

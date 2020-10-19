@@ -12,6 +12,7 @@
             margin-bottom: 50px;
         }
         #main {
+            padding-top: 30px;
             width: 80%;
             margin: auto;
             display: grid;
