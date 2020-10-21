@@ -76,6 +76,7 @@ namespace userControl
         protected void cancel(object sender, EventArgs e)
         {
             cmps.Clear();
+            affiche();
         }
 
         protected void submit(object sender, EventArgs e)
@@ -84,7 +85,6 @@ namespace userControl
             {
                 cmd = new Commande();
                 cmd.DateCmd = DateTime.Now;
-                db.Commande.InsertOnSubmit(cmd);
 
                 foreach (Composition cmp in cmps)
                 {
@@ -93,6 +93,9 @@ namespace userControl
                 }
 
                 db.SubmitChanges();
+
+                cmps.Clear();
+                affiche();
             }
             else
             {
