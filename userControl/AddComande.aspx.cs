@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Collections;
+using System.CodeDom;
 
 namespace userControl
 {
@@ -12,7 +13,7 @@ namespace userControl
     {
         DCDataContext db = new DCDataContext();
         Commande cmd;
-        List<Composition> cmps = new List<Composition>();
+        static List<Composition> cmps = new List<Composition>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -35,12 +36,23 @@ namespace userControl
 
                 if(art != null)
                 {
+
+                    foreach (Composition cm in cmps)
+                    {
+                        if(cm.Article.CodeArt == art.CodeArt)
+                        {
+                            cm.Qte += int.Parse(quantite.Value);
+                            affiche();
+                            return;
+                        }
+                    }
+
                     Composition cmp = new Composition();
                     cmp.Commande = cmd;
                     cmp.Article = art;
                     cmp.Qte = int.Parse(quantite.Value);
                     cmps.Add(cmp);
-                    Label1.Text = cmps.ToString();
+                    affiche();
                 }
                 else
                 {
@@ -49,6 +61,15 @@ namespace userControl
             }else
             {
 
+            }
+        }
+
+        private void affiche()
+        {
+            Label1.Text = "";
+            foreach (Composition cm in cmps)
+            {
+                Label1.Text += "{label: " + cm.Article.Libele + " pu: " + cm.Article.Pu + " qtte: " + cm.Qte + "} ";
             }
         }
 

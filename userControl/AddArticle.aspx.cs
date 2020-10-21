@@ -36,8 +36,9 @@ namespace userControl
                     error.Style["color"] = "red";
                     error.Text = "article already exist";
                 }
-                
-            }else
+
+            }
+            else
             {
                 error.Style["color"] = "red";
                 error.Text = "Please enter informations !";

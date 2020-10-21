@@ -95,8 +95,12 @@
                     </tr>
                 </table>
                 <section id="buttons">
-                    <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="cancel" Height="63px" Width="129px" BackColor="Red" />
-                    <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="submit" Height="63px" Width="191px" BackColor="Lime"/>
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                        <ContentTemplate>
+                            <asp:Button ID="Cancel" runat="server" Text="Cancel" OnClick="cancel" Height="63px" Width="129px" BackColor="Red" />
+                            <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="submit" Height="63px" Width="191px" BackColor="Lime"/>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
                 </section>
             </div>
             <div class="outputs">
