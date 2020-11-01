@@ -44,7 +44,8 @@ namespace userControl
             codecmd = cmd.CodeCmd.ToString();
             DateTime dt = getDate(cmd);
             date = dt.ToString();
-            total = totalprx(); Repeater1.DataSource = composition;
+            total = totalprx(); 
+            Repeater1.DataSource = composition;
             Repeater1.DataBind();
         }
         protected string afficherCtrl(string str)

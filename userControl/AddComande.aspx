@@ -106,8 +106,7 @@
             <div class="outputs">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
-                        reciept
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        <asp:Panel ID="Panel1" runat="server"></asp:Panel>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>

@@ -17,7 +17,7 @@ namespace userControl
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void add(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace userControl
                 Article art;
                 if(Id.Text != "" && int.TryParse(Id.Text,out int id))
                 {
-                    art = db.Article.SingleOrDefault(x => x.CodeArt == id);
+                    art = db.Article.Single(x => x.CodeArt == id);
                 }
                 else
                 {
@@ -66,10 +66,11 @@ namespace userControl
 
         private void affiche()
         {
-            Label1.Text = "";
             foreach (Composition cm in cmps)
             {
-                Label1.Text += "{label: " + cm.Article.Libele + " pu: " + cm.Article.Pu + " qtte: " + cm.Qte + "} ";
+                detail cc = LoadControl("detail.ascx") as detail;
+                cc.cmp = cm;
+                Panel1.Controls.Add(cc);
             }
         }
 
