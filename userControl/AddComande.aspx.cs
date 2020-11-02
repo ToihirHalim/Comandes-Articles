@@ -14,6 +14,7 @@ namespace userControl
         DCDataContext db = new DCDataContext();
         Commande cmd;
         static List<Composition> cmps = new List<Composition>();
+        protected double total = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -87,6 +88,10 @@ namespace userControl
                         {
                             int qtt = cm.Qte - int.Parse(quantite.Value);
                             cm.Qte = qtt >= 0 ? qtt : 0;
+                            if (qtt < 1)
+                            {
+                                cmps.Remove(cm);
+                            }
                             affiche();
                             return;
                         }
@@ -107,11 +112,13 @@ namespace userControl
 
         private void affiche()
         {
+            total = 0;
             foreach (Composition cm in cmps)
             {
                 detail cc = LoadControl("detail.ascx") as detail;
                 cc.cmp = cm;
                 Panel1.Controls.Add(cc);
+                total += (double) cm.Article.Pu * cm.Qte;
             }
         }
 

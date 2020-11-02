@@ -55,6 +55,12 @@
             background-color: cadetblue;
             margin-left: 15px;
         }
+        .Cmp {
+            width: 200px;
+        }
+        .auto-style10 {
+            width: 112px;
+        }
     </style>
 </head>
 <body>
@@ -111,7 +117,31 @@
             <div class="outputs">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                     <ContentTemplate>
-                        <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+                        <div class="Cmp">
+                            <table class="auto-style1">
+                                <tr>
+                                    <td class="auto-style10auto-style3">Code Article</td>
+                                    <td class="auto-style10">Libele</td>
+                                    <td class="auto-style10">Prix Unitaire</td>
+                                    <td class="auto-style10">Quantité</td>
+                                    <td class="auto-style10">Total Article</td>
+                                </tr>
+                            </table>
+                            <hr />
+                        </div>
+                        <asp:Panel ID="Panel1" runat="server" maxHeight="50vh"></asp:Panel>
+                        <div class="Cmp">
+                            <hr />
+                            <table class="auto-style1">
+                                <tr>
+                                    <td class="auto-style10"></td>
+                                    <td class="auto-style10"></td>
+                                    <td class="auto-style10"></td>
+                                    <td class="auto-style10"><h2 style="margin: 10px 0px; padding: 0px;">$<%= total %></h2></td>
+                                    <td class="auto-style10"><h3 style="margin: 10px 0px; padding: 0px;">Total</h3></td>
+                                </tr>
+                            </table>
+                        </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
