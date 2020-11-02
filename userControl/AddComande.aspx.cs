@@ -64,6 +64,47 @@ namespace userControl
             }
         }
 
+        protected void delete(object sender, EventArgs e)
+        {
+            if (Id.Text != "" || Libele.Text != "")
+            {
+                Article art;
+                if (Id.Text != "" && int.TryParse(Id.Text, out int id))
+                {
+                    art = db.Article.Single(x => x.CodeArt == id);
+                }
+                else
+                {
+                    art = db.Article.SingleOrDefault(x => x.Libele == Libele.Text);
+                }
+
+                if (art != null)
+                {
+
+                    foreach (Composition cm in cmps)
+                    {
+                        if (cm.Article.CodeArt == art.CodeArt)
+                        {
+                            int qtt = cm.Qte - int.Parse(quantite.Value);
+                            cm.Qte = qtt >= 0 ? qtt : 0;
+                            affiche();
+                            return;
+                        }
+                    }
+
+                    affiche();
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+
+            }
+        }
+
         private void affiche()
         {
             foreach (Composition cm in cmps)

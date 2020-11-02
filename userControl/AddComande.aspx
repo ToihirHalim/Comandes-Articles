@@ -27,7 +27,7 @@
         }
         .auto-style5 {
             background-color:cadetblue;
-            margin-left: 55px;
+            margin-left: 3px;
         }
         header{
             display: flex;
@@ -50,6 +50,10 @@
         }
         .outputs{
             flex: 1;
+        }
+        .auto-style6 {
+            background-color: cadetblue;
+            margin-left: 15px;
         }
     </style>
 </head>
@@ -88,8 +92,9 @@
                         <td class="auto-style3">
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
+                                     <asp:Button ID="Button2" runat="server" Text="Delete" CssClass="auto-style5" Width="77px" OnClick="delete" />
                                      <asp:Button ID="Button1" runat="server" Text="Add" CssClass="auto-style5" Width="79px" OnClick="add" />
-                                 </ContentTemplate>
+                                </ContentTemplate>
                              </asp:UpdatePanel>
                          </td>
                     </tr>
